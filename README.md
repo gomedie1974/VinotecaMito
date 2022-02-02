@@ -6,3 +6,4 @@ En la pagina Vinos hay info sobre los destacados 2021 y 3 notas sobre tres uvas,
 En la pagina de GiftCards si se hace click sobre comprar se direcciona a la pagina de compra de GF para completar los datos.
 En el carro de compras del NAV si se hace click lo direcciona a la pagina del carro donde figurarian todos los productos a comprar.
 En todas las paginas si se hace click en el carro va directo a la pagina de carro de compras.
+Todas las paginas tienen la navegabilidad para ir a otras paginas sin ir al home
