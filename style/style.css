@@ -363,4 +363,16 @@ input[id^="spoiler"]:checked + label + .spoiler {
   height: auto;
   opacity: 1;
 }
+
+.piecarro {
+  margin-left: -17%;
+  margin-right: -17%;
+}
+
+@media screen and (min-width: 1023px) {
+  .piecarro {
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
