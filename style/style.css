@@ -336,7 +336,7 @@ input[id^="spoiler"] {
 /* Estilo botón clicable */
 input[id^="spoiler"] + label {
   display: block;
-  width: 200px;
+  width: 150px;
   margin: 0 auto;
   padding: 5px 20px;
   background: #eeb9da;
@@ -362,13 +362,5 @@ input[id^="spoiler"] ~ .spoiler {
 input[id^="spoiler"]:checked + label + .spoiler {
   height: auto;
   opacity: 1;
-}
-
-@media screen and (min-width: 501px) {
-  .pie {
-    margin-left: -16%;
-    margin-right: -16%;
-    margin-bottom: 0;
-  }
 }
 /*# sourceMappingURL=style.css.map */

@@ -296,7 +296,7 @@ input[id^="spoiler"]{
     /* Estilo botón clicable */
     input[id^="spoiler"] + label {
     display: block;
-    width: 200px;
+    width: 150px;
     margin: 0 auto;
     padding: 5px 20px;
     background: rgb(238, 185, 218);
@@ -320,11 +320,4 @@ input[id^="spoiler"]{
     height: auto;
     opacity: 1;
     }
-    
-    @media screen and (min-width: 501px){
-    .pie{
-        margin-left: -16%;
-        margin-right: -16%;
-        margin-bottom: 0;
-    }
-}
+ 
