@@ -168,22 +168,22 @@ while (opcion != 0) {
 }
  */ 
  
-let edad = Number(prompt("ingrese su edad"));
+let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
 
 if (edad >= 18) {
-    alert("Ud es mayor de edad, puede navegar en la pagina" );    
+    alert("Ud es mayor de edad, acceso permitido" );    
 
-        let numNuevo = Number(prompt("Ingrese un numero - 0 para salir")); 
+        let numNuevo = Number(prompt("Ingrese un número - 0 para salir")); 
         let i = 0;
         while (numNuevo != 0) {
         i = i + 1; 
-        numNuevo = Number(prompt("Ingrese un numero - 0 para salir"));
+        numNuevo = Number(prompt("Ingrese un número - 0 para salir"));
         }
-    alert("Ud ingreso" + " " + i + " " + "numeros" );
+    alert("Ud ingreso" + " " + i + " " + "números" );
     }
     else {
         alert("Ud NO es mayor de edad" );
-        alert("INGRESO DENEGADO" );
+        alert("!!!INGRESO DENEGADO!!!" );
         window.location.assign ("https://www.google.com");
         //window.locai= "./pabla5 
 }
