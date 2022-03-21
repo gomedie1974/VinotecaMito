@@ -167,7 +167,7 @@ while (opcion != 0) {
     opcion = Number(prompt("ingrese su opcion, 1-aperitivo, 2-cervezas, 3-vinos, 0 para salir"));
 }
  */ 
- 
+ /* 
 let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
 
 if (edad >= 18) {
@@ -185,10 +185,120 @@ if (edad >= 18) {
         alert("Ud NO es mayor de edad" );
         alert("!!!INGRESO DENEGADO!!!" );
         window.location.assign ("https://www.google.com");
-        //window.locai= "./pabla5 
 }
+ */
 /* 
 for (let i = 0; i < 5; i++) {
     console.log("Hola repeti" + i);
     
 } */
+/* 
+switch (key) {
+    case value:
+        
+        break;
+    case value:
+        
+        break;
+    case value:
+        
+        break;
+    default:
+        break;
+} */
+/* 
+let pedidoDeTurnos = prompt("Ingrese dia que quiere turno, lunes, martes o miercoles");
+
+switch (pedidoDeTurnos) {
+    case "lunes": 
+        alert("Su turno fue tomado para Lunes");
+        break;
+    case "martes": 
+    alert("Su turno fue tomado para Martes");
+        break;
+    case "miercoles": 
+    alert("Su turno fue tomado para Mirecoles");
+        break;
+    
+    default:
+        alert("Ese dia no se dan turnos, vuelva a intentar");
+        break;        
+} */
+//funciones
+/* 
+function saludo() {
+    alert ("hola soy una funcion");
+}
+saludo()
+ */
+
+/* function sumar(n1, n2) {
+    //console.log(n1+n2)   
+    return (n1+n2);
+}
+alert(sumar(10,20));
+ */
+
+//funcion calculadora
+
+/* function calculadora(numero1, numero2, operador) {
+    switch (operador) {
+        case "+":
+            return numero1 + numero2;
+    
+        case "-":
+            return numero1 - numero2;
+    
+        case "*":
+            return numero1 * numero2;
+    
+        case "/":
+            return numero1 / numero2;
+    
+        default:
+            return 0
+    }
+}
+let valor1 = Number (prompt("ingresa el valor 1"))
+let valor2 = Number (prompt("ingresa el valor 2"))
+let operacion = prompt("ingresa la operacion +, -, *, /");
+
+alert(calculadora(valor1, valor2, operacion)); */
+
+
+let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
+
+if (edad >= 18) { 
+    permitido();
+    
+    }
+    else {
+    noPermitido();    
+}
+
+
+function permitido() {
+    alert("Ud es mayor de edad, acceso permitido" );
+    comprar();
+}
+
+function noPermitido() {
+    alert("Ud NO es mayor de edad" );
+    alert("!!!INGRESO DENEGADO!!!" );
+    window.location.assign ("https://www.google.com");
+}
+
+const fernet = 200;
+const aperol = 150;
+let total = 0;
+let cantidad = 0;
+function comprar() {
+    let opcion = Number(prompt("Ingrese producto a comprar 1-Fernet, 2 Aperol"))
+    if (opcion == 1) {
+        cantidad = Number(prompt("Ingrese cantidad a comprar "));
+        total = cantidad * fernet; 
+        alert("la cantidad en $ a comprar es" + cantidad);   
+    } else {
+        alert("APEROL");
+    }   
+}
