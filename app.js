@@ -280,6 +280,7 @@ if (edad >= 18) {
 function permitido() {
     alert("Ud es mayor de edad, acceso permitido" );
     comprar();
+    
 }
 
 function noPermitido() {
@@ -288,17 +289,29 @@ function noPermitido() {
     window.location.assign ("https://www.google.com");
 }
 
-const fernet = 200;
-const aperol = 150;
+
 let total = 0;
 let cantidad = 0;
 function comprar() {
-    let opcion = Number(prompt("Ingrese producto a comprar 1-Fernet, 2 Aperol"))
-    if (opcion == 1) {
-        cantidad = Number(prompt("Ingrese cantidad a comprar "));
-        total = cantidad * fernet; 
-        alert("la cantidad en $ a comprar es" + cantidad);   
-    } else {
-        alert("APEROL");
-    }   
+    const fernet = 200;
+    const aperol = 150;
+    let totalGral = 0;
+    let totalF = 0;
+    let totalA = 0;
+    let compra = prompt("Desea realizar una compra S/N")
+    while (compra == "S" || compra == "s") {
+        let opcion = Number(prompt("Ingrese producto a comprar 1-Fernet, 2 Aperol"))
+        if (opcion == 1) {
+            let cantidad = Number(prompt("Ingrese cantidad a comprar "));
+            let totalF = cantidad * fernet; 
+            totalGral = totalGral + totalF + totalA;
+         } else {
+            let cantidad = Number(prompt("Ingrese cantidad a comprar "));
+            let totalA = cantidad * aperol; 
+            totalGral = totalGral + totalF + totalA;
+         }
+        compra = prompt("Desea realizar una compra S/N"); 
+    }       
+    
+    alert("la cantidad en $ a comprar es" + " " + totalGral);
 }
