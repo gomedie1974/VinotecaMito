@@ -289,10 +289,11 @@ function noPermitido() {
     window.location.assign ("https://www.google.com");
 }
 
-
 let total = 0;
 let cantidad = 0;
 function comprar() {
+    const iva = 1.21;
+    let ivaCompra = 0;
     const fernet = 200;
     const aperol = 150;
     let totalGral = 0;
@@ -303,15 +304,20 @@ function comprar() {
         let opcion = Number(prompt("Ingrese producto a comprar 1-Fernet, 2 Aperol"))
         if (opcion == 1) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            let totalF = cantidad * fernet; 
+            let totalF = cantidad * fernet;
             totalGral = totalGral + totalF + totalA;
-         } else {
+            compra = prompt("Desea seguir comprando S/N");
+         } else { if (opcion == 2) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            let totalA = cantidad * aperol; 
-            totalGral = totalGral + totalF + totalA;
-         }
-        compra = prompt("Desea realizar una compra S/N"); 
-    }       
-    
-    alert("la cantidad en $ a comprar es" + " " + totalGral);
+            totalA = cantidad * aperol; 
+            totalGral = totalGral + totalF + totalA; 
+            compra = prompt("Desea seguir comprando S/N");            
+         } else {
+            alert("OPCION ERRONEA");
+         }  
+        } 
+    }
+    ivaCompra = totalGral * iva;         
+    alert("El total de su compra sin IVA es:" + " " + totalGral);
+    alert("El total de su compra con IVA es:" + " " + ivaCompra); 
 }
