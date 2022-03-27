@@ -278,11 +278,9 @@ if (edad >= 18) {
 
 
 function permitido() {
-    alert("Ud es mayor de edad, acceso permitido" );
-    comprar();
-    
+     alert("Ud es mayor de edad, acceso permitido" );
+    comprar();  
 }
-
 function noPermitido() {
     alert("Ud NO es mayor de edad" );
     alert("!!!INGRESO DENEGADO!!!" );
@@ -292,32 +290,45 @@ function noPermitido() {
 let total = 0;
 let cantidad = 0;
 function comprar() {
+    let productos = ["Fernet", "Aperol", "Campari"];
+    let precios = [890, 650, 403];
     const iva = 1.21;
     let ivaCompra = 0;
-    const fernet = 200;
-    const aperol = 150;
     let totalGral = 0;
     let totalF = 0;
     let totalA = 0;
     let compra = prompt("Desea realizar una compra S/N")
     while (compra == "S" || compra == "s") {
-        let opcion = Number(prompt("Ingrese producto a comprar 1-Fernet, 2 Aperol"))
-        if (opcion == 1) {
+        let opcion = prompt("Ingrese producto a comprar Fernet, Aperol, Campari")
+        if (opcion == productos[0]) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            let totalF = cantidad * fernet;
+            let totalF = cantidad * precios[0];
             totalGral = totalGral + totalF + totalA;
             compra = prompt("Desea seguir comprando S/N");
-         } else { if (opcion == 2) {
+         } else { if (opcion == productos[1]) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            totalA = cantidad * aperol; 
+            totalA = cantidad * precios[1]; 
             totalGral = totalGral + totalF + totalA; 
             compra = prompt("Desea seguir comprando S/N");            
-         } else {
+         } else { if (opcion == productos[2]) {
+            let cantidad = Number(prompt("Ingrese cantidad a comprar "));
+            totalA = cantidad * precios[2]; 
+            totalGral = totalGral + totalF + totalA; 
+            compra = prompt("Desea seguir comprando S/N");            
+         }
+         else {
             alert("OPCION ERRONEA");
-         }  
+            break;
+            }
+         } 
         } 
     }
     ivaCompra = totalGral * iva;         
     alert("El total de su compra sin IVA es:" + " " + totalGral);
     alert("El total de su compra con IVA es:" + " " + ivaCompra); 
 }
+
+
+
+
+
