@@ -290,30 +290,31 @@ function noPermitido() {
 let total = 0;
 let cantidad = 0;
 function comprar() {
-    let productos = ["Fernet", "Aperol", "Campari"];
+    let productos = ["FERNET", "APEROL", "CAMPARI"];
     let precios = [890, 650, 403];
     const iva = 1.21;
     let ivaCompra = 0;
     let totalGral = 0;
     let totalF = 0;
     let totalA = 0;
+    let totalC = 0;
     let compra = prompt("Desea realizar una compra S/N")
     while (compra == "S" || compra == "s") {
-        let opcion = prompt("Ingrese producto a comprar Fernet, Aperol, Campari")
+        let opcion = prompt("Ingrese producto a comprar FERNET, APEROL, CAMPARI"); 
         if (opcion == productos[0]) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            let totalF = cantidad * precios[0];
-            totalGral = totalGral + totalF + totalA;
+            totalF = cantidad * precios[0];
+            totalGral = totalGral + totalF + totalA + totalC;
             compra = prompt("Desea seguir comprando S/N");
          } else { if (opcion == productos[1]) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
             totalA = cantidad * precios[1]; 
-            totalGral = totalGral + totalF + totalA; 
+            totalGral = totalGral + totalF + totalA + totalC; 
             compra = prompt("Desea seguir comprando S/N");            
          } else { if (opcion == productos[2]) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            totalA = cantidad * precios[2]; 
-            totalGral = totalGral + totalF + totalA; 
+            totalC = cantidad * precios[2]; 
+            totalGral = totalGral + totalF + totalA + totalC; 
             compra = prompt("Desea seguir comprando S/N");            
          }
          else {
@@ -326,6 +327,9 @@ function comprar() {
     ivaCompra = totalGral * iva;         
     alert("El total de su compra sin IVA es:" + " " + totalGral);
     alert("El total de su compra con IVA es:" + " " + ivaCompra); 
+    alert("El total de su compra de Fernet es:" + " " + totalF); 
+    alert("El total de su compra de Aperol es:" + " " + totalA); 
+    alert("El total de su compra de Casmpari es:" + " " + totalC); 
 }
 
 
