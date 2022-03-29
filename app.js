@@ -343,9 +343,7 @@ class Producto {
         this.cantidad = cantidad;
         this.disponible = true;
     }
-}
-
- 
+} 
 
 let arrayProductos = [];
 alert("Usted va a ingresar a dar de alta los productos");
