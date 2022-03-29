@@ -266,27 +266,7 @@ let operacion = prompt("ingresa la operacion +, -, *, /");
 alert(calculadora(valor1, valor2, operacion)); */
 
 
-let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
-
-if (edad >= 18) { 
-    permitido();
-    
-    }
-    else {
-    noPermitido();    
-}
-
-
-function permitido() {
-     alert("Ud es mayor de edad, acceso permitido" );
-    comprar();  
-}
-function noPermitido() {
-    alert("Ud NO es mayor de edad" );
-    alert("!!!INGRESO DENEGADO!!!" );
-    window.location.assign ("https://www.google.com");
-}
-
+/* 
 let total = 0;
 let cantidad = 0;
 function comprar() {
@@ -332,7 +312,56 @@ function comprar() {
     alert("El total de su compra de Casmpari es:" + " " + totalC); 
 }
 
+ */
+
+let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
+
+if (edad >= 18) { 
+    permitido();
+    
+    }
+    else {
+    noPermitido();    
+}
+
+function permitido() {
+    alert("Ud es mayor de edad, acceso permitido" );
+    //carga();  
+}
+function noPermitido() {
+    alert("Ud NO es mayor de edad" );
+    alert("!!!INGRESO DENEGADO!!!" );
+    window.location.assign ("https://www.google.com");
+}
 
 
+class Producto {
+    constructor (nombre, precio, marca, cantidad){
+        this.nombre = nombre;
+        this.precio = parseFloat(precio);
+        this.marca = marca;
+        this.cantidad = cantidad;
+        this.disponible = true;
+    }
+}
+
+ 
+
+let arrayProductos = [];
+alert("Usted va a ingresar a dar de alta los productos");
+let comprobar = prompt("Ingrese el nombre del producto o FIN para terminar la carga");       
+do {
+    if (comprobar === "FIN" || comprobar === "Fin" || comprobar === "fin"){
+        break;
+    }else{
+        nonmbreNew = comprobar;
+        let precioNew = prompt("Ingrese el precio del producto");
+        let marcaNew = prompt("Ingrese la marca del producto");
+        let cantidadNew = prompt("Ingrese cantida del producto");
+        arrayProductos.push(new Producto(nonmbreNew, precioNew, marcaNew, cantidadNew));
+        comprobar = prompt("Ingrese el nombre del producto o FIN para terminar la carga");       
+    }     
+} while (comprobar != "FIN" || comprobar != "Fin" || comprobar != "fin");
 
 
+console.log(arrayProductos);
