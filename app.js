@@ -330,7 +330,7 @@ do {
 } while (comprobar != "FIN" || comprobar != "Fin" || comprobar != "fin");
  */
 
-let edad = Number(prompt("Ingrese su edad, debe ser mayor a 17 años para poder navegar"));
+let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años para poder navegar`));
 
 if (edad >= 18) { 
     permitido();
@@ -342,13 +342,14 @@ if (edad >= 18) {
 
 function permitido() {
     alert("Ud es mayor de edad, acceso permitido" );
+    buscar();
 }
 function noPermitido() {
     alert("Ud NO es mayor de edad" );
     alert("!!!INGRESO DENEGADO!!!" );
     window.location.assign ("https://www.google.com");
 }
-
+function buscar() {
 const arrayProductos = [];
 class Producto {
     constructor (codigo, nombre, precio, marca, cantidad){
@@ -370,8 +371,16 @@ arrayProductos.push(new Producto("FBM,", "FERNET", 390, "BRANCA MENTA", 15 ));
 
 
 //Busqueda de productos
+//function buscar() {  
 let ingresado = prompt("Ingrese el producto que desea buscar: FERNET-APEROL-CAMPARI");
 let productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
 for (let producto of productoBuscar){
-alert("El precio del" + " " + producto.nombre + " " + producto.marca +" " + "es" + " " + producto.precio +" " +" y la cantidad actual en stock es" + " " + producto.cantidad);
+alert(`El precio del  ${producto.nombre} ${producto.marca} es ${producto.precio} y la cantidad actual en stock es ${producto.cantidad}`);
 }
+}
+
+
+/* Compra de producto
+let productoCompra = prompt("Ingrese el producto que desea comprar, FERNET, APEROL, CAMPARI");
+let cantidadCompra = prompt("Ingrese la cantidad del producto que desea comprar");
+ */
