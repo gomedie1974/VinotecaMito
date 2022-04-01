@@ -340,7 +340,7 @@ if (edad >= 18) {
     }
 function permitido() {
     alert("Ud es mayor de edad, acceso permitido" );
-    buscar();
+
     }
 function noPermitido() {
     alert("Ud NO es mayor de edad" );
@@ -359,20 +359,21 @@ class Producto {
         this.disponible = true;
     }
 }
-this.info = 'Producto '
+
+//this.info = 'Producto'
 arrayProductos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
 arrayProductos.push(new Producto("FV32", "FERNET", 490, "VITONE", 24 ));
 arrayProductos.push(new Producto("AP23", "APEROL", 690, "APEROL", 27 ));
 arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "CAPARI", 39 ));
 arrayProductos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
 arrayProductos.push(new Producto("FBM,", "FERNET", 390, "BRANCA MENTA", 15 ));
-let productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
-    
+
 //Busqueda de productos
 function buscar() {  
     let ingresado = prompt("Ingrese el producto que desea buscar: FERNET-APEROL-CAMPARI");
-    /* let productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
-     */for (let producto of productoBuscar){
+    const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
+    for (let producto of productoBuscar){
     alert (`El precio del  ${producto.nombre} ${producto.marca} es ${producto.precio} y la cantidad actual en stock es ${producto.cantidad}`);
     }
 } 
+buscar();
