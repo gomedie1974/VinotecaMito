@@ -332,22 +332,6 @@ do {
  
 let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años para poder navegar`));
 
-if (edad >= 18) { 
-    permitido();
-    }
-    else {
-    noPermitido();
-    }
-function permitido() {
-    alert("Ud es mayor de edad, acceso permitido" );
-
-    }
-function noPermitido() {
-    alert("Ud NO es mayor de edad" );
-    alert("!!!INGRESO DENEGADO!!!" );
-    window.location.assign ("https://www.google.com");
-}
-
 const arrayProductos = [];
 class Producto {
     constructor (codigo, nombre, precio, marca, cantidad){
@@ -375,5 +359,21 @@ function buscar() {
     for (let producto of productoBuscar){
     alert (`El precio del  ${producto.nombre} ${producto.marca} es ${producto.precio} y la cantidad actual en stock es ${producto.cantidad}`);
     }
-} 
-buscar();
+}
+
+function permitido() {
+    alert("Ud es mayor de edad, acceso permitido" );
+    buscar();
+    }
+function noPermitido() {
+    alert("Ud NO es mayor de edad" );
+    alert("!!!INGRESO DENEGADO!!!" );
+    window.location.assign ("https://www.google.com");
+}
+
+if (edad >= 18) { 
+    permitido();
+    }
+    else {
+    noPermitido();
+    }
