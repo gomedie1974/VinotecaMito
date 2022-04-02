@@ -265,15 +265,11 @@ let operacion = prompt("ingresa la operacion +, -, *, /");
 
 alert(calculadora(valor1, valor2, operacion)); */
 
-
-
- 
-
 const arrayProductos = [];
 class Producto {
     constructor (codigo, nombre, precio, marca, cantidad){
         this.codigo = codigo;
-        this.nombre = nombre.toUpperCase();
+        this.nombre = nombre;
         this.precio = parseFloat(precio);
         this.marca = marca;
         this.cantidad = cantidad;
@@ -281,17 +277,16 @@ class Producto {
     }
 }
 
-
 arrayProductos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
-arrayProductos.push(new Producto("FV32", "CYNAR", 490, "CYNAR", 24 ));
-arrayProductos.push(new Producto("AP23", "APEROL", 690, "APEROL", 27 ));
-arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "CAMPARI", 39 ));
-arrayProductos.push(new Producto("F1882", "VODKA", 290, "1882", 143 ));
+arrayProductos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
+arrayProductos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
+arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
+arrayProductos.push(new Producto("F1882", "VODKA", 290, "ORANGE", 143 ));
 arrayProductos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
 
-/* Alta de Productos
+/* Alta de cliente
 function alta(){
-alert("Usted va a ingresar a dar de alta los productos");
+alert("Usted va a dar de alta los productos");
 let comprobar = prompt("Ingrese el nombre del producto o FIN para terminar la carga");       
 do {
     if (comprobar === "FIN" || comprobar === "Fin" || comprobar === "fin"){
@@ -317,15 +312,15 @@ function comprar() {
     let totalF = 0;
     let totalA = 0;
     let totalC = 0;
-    let compra = prompt("Desea realizar una compra S/N")
-    while (compra == "S" || compra == "s") {
-        let ingresado = prompt("Ingrese el producto que desea comprar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA");
+    let compra = prompt("Desea realizar una compra S/N").toUpperCase()
+    while (compra == "S") {
+        let ingresado = prompt("Ingrese el producto que desea comprar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA").toUpperCase();
         const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
         for (let producto of productoBuscar) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
             total = total + (cantidad * producto.precio) ;
-            compra = prompt("Desea seguir comprando S/N");
-            if (compra != "S" || compra !== "s")
+            compra = prompt("Desea seguir comprando S/N").toUpperCase();
+            if (compra != "S")
             {break;
             } 
          } 
@@ -334,21 +329,24 @@ function comprar() {
     ivaCompra = total * iva;         
     alert("El total de su compra sin IVA es:" + " " + total);
     alert("El total de su compra con IVA es:" + " " + ivaCompra); 
+    entrada();
 }
 
 
 //Busqueda de productos
 function buscar() {  
-    let ingresado = prompt("Ingrese el producto que desea buscar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA");
+    let ingresado = prompt("Ingrese el producto que desea buscar: \n FERNET \n CYNAR \n APEROL \n CAMPARI \n VODKA \n BRANCA MENTA").toUpperCase();
     const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
     for (let producto of productoBuscar){
-    alert (`El precio del  ${producto.nombre} ${producto.marca} es ${producto.precio} y la cantidad actual en stock es ${producto.cantidad}`);
+    alert (`El precio del  ${producto.nombre} ${producto.marca} es $ ${producto.precio} \nLa cantidad actual en stock es ${producto.cantidad} botellas`);
     }
+    entrada();
 }
 
 function
  permitido() {
     alert("Ud es mayor de edad, acceso permitido" );
+    entrada();
     }
 function noPermitido() {
     alert("Ud NO es mayor de edad" );
@@ -356,7 +354,7 @@ function noPermitido() {
     window.location.assign ("https://www.google.com");
 }
 
-let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años para poder navegar`));
+let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años`));
 
 if (edad >= 18) { 
     permitido();
@@ -366,9 +364,21 @@ if (edad >= 18) {
     noPermitido();
     }
 
-let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Consultar un producto \n 2=Comprar un producto`));
-if (opcion == 1) {
-    buscar();   
-} else {
-    comprar();
+function entrada() {
+let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Consultar un producto \n 2=Comprar un producto\n 3=Navegar por la web`));    
+    switch (opcion) {
+        case 1:
+            buscar();
+            break;
+    
+        case 2:
+            comprar();
+            break;
+    
+        case 3:
+            break;
+    }
 }
+/* let boton = document.getElementsByClassName("pruebaBoton");
+boton = document.addEventListener("click",buscar);
+ */
