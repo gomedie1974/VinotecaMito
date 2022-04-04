@@ -379,6 +379,7 @@ let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Consultar un producto \n
             break;
     }
 }
-/* let boton = document.getElementsByClassName("pruebaBoton");
-boton = document.addEventListener("click",buscar);
- */
+let boton = document.getElementById("pruebaBoton");
+boton.addEventListener("click",buscar);
+
+ 
