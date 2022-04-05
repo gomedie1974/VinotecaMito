@@ -327,8 +327,8 @@ function comprar() {
          } 
 
     ivaCompra = total * iva;         
-    alert("El total de su compra sin IVA es:" + " " + total);
-    alert("El total de su compra con IVA es:" + " " + ivaCompra); 
+    alert(`El total de su compra sin IVA es: $ ${total}`);
+    alert(`El total de su compra con IVA es: $ ${ivaCompra}`); 
     entrada();
 }
 
@@ -340,7 +340,6 @@ function buscar() {
     for (let producto of productoBuscar){
     alert (`El precio del  ${producto.nombre} ${producto.marca} es $ ${producto.precio} \nLa cantidad actual en stock es ${producto.cantidad} botellas`);
     }
-    entrada();
 }
 
 function
@@ -365,21 +364,16 @@ if (edad >= 18) {
     }
 
 function entrada() {
-let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Consultar un producto \n 2=Comprar un producto\n 3=Navegar por la web`));    
+let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Comprar un producto\n 2=Navegar por la web`));    
     switch (opcion) {
         case 1:
-            buscar();
-            break;
-    
-        case 2:
             comprar();
             break;
     
-        case 3:
+        case 2:
             break;
     }
 }
-let boton = document.getElementById("pruebaBoton");
+let boton = document.getElementById("btnBuscar");
 boton.addEventListener("click",buscar);
 
- 
