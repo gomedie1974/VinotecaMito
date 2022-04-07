@@ -376,4 +376,7 @@ let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Comprar un producto\n 2=
 }
 let boton = document.getElementById("btnBuscar");
 boton.addEventListener("click",buscar);
-
+ 
+/* let comprarProd = document.getElementById("btnComprar");
+comprarProd.addEventListener("click",comprar);
+ */ 
