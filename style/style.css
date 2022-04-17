@@ -375,4 +375,32 @@ input[id^="spoiler"]:checked + label + .spoiler {
     margin-right: 1%;
   }
 }
+
+.carrito {
+  min-width: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.cambiaColor > :hover {
+  background-color: blue;
+  font-weight: bold;
+}
+
+.tableProducto {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.tableCantidad > input {
+  width: 40px;
+  border: none;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 700;
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
 /*# sourceMappingURL=style.css.map */

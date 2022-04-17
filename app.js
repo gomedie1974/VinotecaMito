@@ -264,26 +264,6 @@ let valor2 = Number (prompt("ingresa el valor 2"))
 let operacion = prompt("ingresa la operacion +, -, *, /");
 
 alert(calculadora(valor1, valor2, operacion)); */
-
-const arrayProductos = [];
-class Producto {
-    constructor (codigo, nombre, precio, marca, cantidad){
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.marca = marca;
-        this.cantidad = cantidad;
-        this.disponible = true;
-    }
-}
-
-arrayProductos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
-arrayProductos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
-arrayProductos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
-arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
-arrayProductos.push(new Producto("F1882", "VODKA", 290, "ORANGE", 143 ));
-arrayProductos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
-
 /* Alta de cliente
 function alta(){
 alert("Usted va a dar de alta los productos");
@@ -301,6 +281,35 @@ do {
     }     
 } while (comprobar != "FIN" || comprobar != "Fin" || comprobar != "fin");
  }*/
+
+
+ 
+const arrayProductos = [];
+class Producto {
+    constructor (codigo, nombre, precio, marca, cantidad){
+        this.id = this.id;
+        this.nombre = nombre;
+        this.precio = parseFloat(precio);
+        this.marca = marca;
+        this.cantidad = cantidad;
+        this.disponible = true;
+    }
+    sumarIva(){
+        this.precio = this.precio * 1.21; 
+    }
+    vendido() {
+        this.disponible = false;
+    }
+}
+
+arrayProductos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
+arrayProductos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
+arrayProductos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
+arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
+arrayProductos.push(new Producto("F1881", "VODKA", 290, "ORANGE", 143 ));
+arrayProductos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
+arrayProductos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
+
 
 // Compra de Productos 
 let total = 0;
@@ -330,16 +339,6 @@ function comprar() {
     alert(`El total de su compra sin IVA es: $ ${total}`);
     alert(`El total de su compra con IVA es: $ ${ivaCompra}`); 
     entrada();
-}
-
-
-//Busqueda de productos
-function buscar() {  
-    let ingresado = prompt("Ingrese el producto que desea buscar: \n FERNET \n CYNAR \n APEROL \n CAMPARI \n VODKA \n BRANCA MENTA").toUpperCase();
-    const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
-    for (let producto of productoBuscar){
-    alert (`El precio del  ${producto.nombre} ${producto.marca} es $ ${producto.precio} \nLa cantidad actual en stock es ${producto.cantidad} botellas`);
-    }
 }
 
 function
@@ -373,10 +372,18 @@ let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Comprar un producto\n 2=
         case 2:
             break;
     }
-}
-let boton = document.getElementById("btnBuscar");
-boton.addEventListener("click",buscar);
- 
-/* let comprarProd = document.getElementById("btnComprar");
-comprarProd.addEventListener("click",comprar);
- */ 
+}   
+//Busqueda de productos
+
+document.getElementById("botonBuscar").addEventListener("click", function(){
+    let buscarDato = document.getElementById("inputDato").value.toUpperCase();
+    let prod = arrayProductos.find(function(producto){
+        return producto.nombre === buscarDato;
+    });
+    if (prod){
+        alert (`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} \n La cantidad actual en stock es ${prod.cantidad} botellas`);
+    }else{
+        alert (`Producto no entontrado`);
+    } 
+})
+
