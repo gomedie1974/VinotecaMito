@@ -344,6 +344,7 @@ function comprar() {
 function
  permitido() {
     alert("Ud es mayor de edad, acceso permitido" );
+    
     entrada();
     }
 function noPermitido() {
@@ -354,7 +355,7 @@ function noPermitido() {
 
 let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años`));
 
-if (edad >= 18) { 
+if (edad >= 18) {     
     permitido();
     
     }
@@ -377,13 +378,20 @@ let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Comprar un producto\n 2=
 
 document.getElementById("botonBuscar").addEventListener("click", function(){
     let buscarDato = document.getElementById("inputDato").value.toUpperCase();
-    let prod = arrayProductos.find(function(producto){
+    const prod = arrayProductos.find(function(producto){
         return producto.nombre === buscarDato;
     });
     if (prod){
-        alert (`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} \n La cantidad actual en stock es ${prod.cantidad} botellas`);
-    }else{
-        alert (`Producto no entontrado`);
+        Swal.fire (`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} \n La cantidad actual en stock es ${prod.cantidad} botellas`);
+        
+    }else{ 
+        Swal.fire({
+            imageUrl: '../image/noencontrado.jpg',
+            imageWidth: 470,
+            imageHeight: 280,
+            imageAlt: 'Custom image',
+          })   
+
     } 
 })
-
+ 
