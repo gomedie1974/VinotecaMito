@@ -323,7 +323,7 @@ function comprar() {
     let totalC = 0;
     let compra = prompt("Desea realizar una compra S/N").toUpperCase()
     while (compra == "S") {
-        let ingresado = prompt("Ingrese el producto que desea comprar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA").toUpperCase();
+        let ingresado = prompt("Ingrese el producto que desea comprar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA").toUpperCase() ;
         const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
         for (let producto of productoBuscar) {
             let cantidad = Number(prompt("Ingrese cantidad a comprar "));
@@ -398,6 +398,7 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 
 setTimeout(() => {Swal.fire({
     title: 'BIENVENIDO!',
+    text: 'MITO - La mejor web sobre bebidas',
     imageUrl: '../image/bienvenidos.gif',
     imageWidth: 400,
     imageHeight: 200,
