@@ -395,4 +395,14 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 
     } 
 })
- 
+
+setTimeout(() => {Swal.fire({
+    title: 'BIENVENIDO!',
+    imageUrl: '../image/bienvenidos.gif',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+  })
+  }, 500);
+
+

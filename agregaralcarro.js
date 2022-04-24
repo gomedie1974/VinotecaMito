@@ -1,6 +1,7 @@
 //CARRO DE COMPRAS
 // Variables
-const baseDeDatos = [
+let baseDeDatos = 
+[
     {
         id: 'FB12',
         nombre: 'FERNET',
@@ -51,21 +52,24 @@ const baseDeDatos = [
         cantidad: 15
     },
 ];
-
-let boton1 = document.getElementById("btnCompra");
-let boton2 = document.getElementById("btnCompra1");
+/* let boton2 = document.getElementById("btnCompra1");
 let boton3 = document.getElementById("btnCompra2");
 let boton4 = document.getElementById("btnCompra3");
 let boton5 = document.getElementById("btnCompra4");
 let boton6 = document.getElementById("btnCompra5");
-boton1.addEventListener("click",hacerCompra);
 boton2.addEventListener("click",hacerCompra);
 boton3.addEventListener("click",hacerCompra);
 boton4.addEventListener("click",hacerCompra);
 boton5.addEventListener("click",hacerCompra);
 boton6.addEventListener("click",hacerCompra);
+*/
+
+const carrito = [];
+
+let boton1 = document.getElementById("btnCompra");
+boton1.addEventListener("click", hacerCompra);
 
 function hacerCompra() {
-    alert ("agragar al carro")
+    
+    alert("HOLA")
 }
-
