@@ -386,7 +386,7 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
         
     }else{ 
         Swal.fire({
-            imageUrl: '../image/noencontrado.png',
+            imageUrl: 'image/noencontrado.png',
             title: 'Producto no encontrado',
             imageWidth: 400,
             imageHeight: 200,
