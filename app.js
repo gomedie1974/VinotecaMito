@@ -399,7 +399,7 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 setTimeout(() => {Swal.fire({
     title: 'BIENVENIDO!',
     text: 'MITO - La mejor web sobre bebidas',
-    imageUrl: 'https://github.com/gomedie1974/VinotecaMito/blob/master/image/bienvenidos.gif',
+    imageUrl: 'https://tenor.com/es/ver/tropical-bebidas-the-simpsons-homer-simpson-gif-15326255',
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: 'Custom image',
