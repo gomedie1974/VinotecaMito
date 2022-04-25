@@ -399,7 +399,7 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 setTimeout(() => {Swal.fire({
     title: 'BIENVENIDO!',
     text: 'MITO - La mejor web sobre bebidas',
-    imageUrl: 'image/be.jpg',
+    imageUrl: 'image/benvenidos.gif',
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: 'Custom image',
