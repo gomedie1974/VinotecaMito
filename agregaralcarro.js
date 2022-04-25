@@ -71,5 +71,5 @@ boton1.addEventListener("click", hacerCompra);
 
 function hacerCompra() {
     
-    alert("HOLA")
+    alert("hola")
 }
