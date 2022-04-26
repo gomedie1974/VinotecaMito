@@ -52,22 +52,11 @@ let baseDeDatos =
         cantidad: 15
     },
 ];
-/* 
-let boton1 = document.getElementById("btnCompra");
-boton1.addEventListener("click", hacerCompra);
- */
 
-const carrito = [];
-
-cargarEventos();
-
-function cargarEventos() {
-    let boton1 = document.getElementById("btnCompra");
-    boton1.addEventListener("click", hacerCompra);
-}
-
-function hacerCompra(e) {
-    console.log("hola")
-
-    
+let boton1 = document.getElementById("infoFernetB");
+boton1.addEventListener("click", infoFernet);
+function infoFernet() {
+    Swal.fire({
+        text: "El FERNET es una bebida alcohólica elaborada a partir de la maceración de varios tipos de hierbas (mirra, ruibarbo, manzanilla, cardamomo, orégano y azafrán, entre otras) en alcohol obtenido de la fermentación de la vid. Posee un color oscuro, un aroma intenso y su graduación alcohólica está comprendida entre 39 y 45 grados, según la marca.",
+      })   
 }
