@@ -52,24 +52,22 @@ let baseDeDatos =
         cantidad: 15
     },
 ];
-/* let boton2 = document.getElementById("btnCompra1");
-let boton3 = document.getElementById("btnCompra2");
-let boton4 = document.getElementById("btnCompra3");
-let boton5 = document.getElementById("btnCompra4");
-let boton6 = document.getElementById("btnCompra5");
-boton2.addEventListener("click",hacerCompra);
-boton3.addEventListener("click",hacerCompra);
-boton4.addEventListener("click",hacerCompra);
-boton5.addEventListener("click",hacerCompra);
-boton6.addEventListener("click",hacerCompra);
-*/
+/* 
+let boton1 = document.getElementById("btnCompra");
+boton1.addEventListener("click", hacerCompra);
+ */
 
 const carrito = [];
 
-let boton1 = document.getElementById("btnCompra");
-boton1.addEventListener("click", hacerCompra);
+cargarEventos();
 
-function hacerCompra() {
+function cargarEventos() {
+    let boton1 = document.getElementById("btnCompra");
+    boton1.addEventListener("click", hacerCompra);
+}
+
+function hacerCompra(e) {
+    console.log("hola")
+
     
-    alert("hola")
 }
