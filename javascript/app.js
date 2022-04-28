@@ -406,4 +406,3 @@ setTimeout(() => {Swal.fire({
   })
   }, 500);
 
-  
