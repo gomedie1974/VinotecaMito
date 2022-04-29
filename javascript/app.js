@@ -281,10 +281,39 @@ do {
     }     
 } while (comprobar != "FIN" || comprobar != "Fin" || comprobar != "fin");
  }*/
+/* 
+function
+ permitido() {
+    Swal.fire({
+        title: 'BIENVENIDO!',
+        text: 'Ud es mayor de edad, acceso permitido',
+        imageUrl: 'image/bienvenidos.gif',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+      })
+      };
+function noPermitido() {
+    Swal.fire({
+        title: 'ACCESO DENEGADO!',
+        text: 'Ud es MENOR de edad',
+      })
+        window.location.assign ("https://www.google.com");
+}
 
 
- 
-const arrayProductos = [];
+let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años`));
+
+if (edad >= 18) {     
+    permitido();
+    
+    }
+    else {
+    noPermitido();
+    } */
+//Busqueda de productos
+// Variables
+const baseDeDatos = [];
 class Producto {
     constructor (codigo, nombre, precio, marca, cantidad){
         this.id = this.id;
@@ -302,83 +331,18 @@ class Producto {
     }
 }
 
-arrayProductos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
-arrayProductos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
-arrayProductos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
-arrayProductos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
-arrayProductos.push(new Producto("F1881", "VODKA", 290, "ORANGE", 143 ));
-arrayProductos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
-arrayProductos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
+baseDeDatos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
+baseDeDatos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
+baseDeDatos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
+baseDeDatos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
+baseDeDatos.push(new Producto("F1881", "VODKA", 290, "ORANGE", 143 ));
+baseDeDatos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
+baseDeDatos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
 
-
-// Compra de Productos 
-let total = 0;
-let cantidad = 0;
-function comprar() {
-    const iva = 1.21;
-    let ivaCompra = 0;
-    let totalGral = 0;
-    let totalF = 0;
-    let totalA = 0;
-    let totalC = 0;
-    let compra = prompt("Desea realizar una compra S/N").toUpperCase()
-    while (compra == "S") {
-        let ingresado = prompt("Ingrese el producto que desea comprar: FERNET- CYNAR - APEROL- CAMPARI - VODKA - BRANCA MENTA").toUpperCase() ;
-        const productoBuscar = arrayProductos.filter(producto => producto.nombre.includes(ingresado));
-        for (let producto of productoBuscar) {
-            let cantidad = Number(prompt("Ingrese cantidad a comprar "));
-            total = total + (cantidad * producto.precio) ;
-            compra = prompt("Desea seguir comprando S/N").toUpperCase();
-            if (compra != "S")
-            {break;
-            } 
-         } 
-         } 
-
-    ivaCompra = total * iva;         
-    alert(`El total de su compra sin IVA es: $ ${total}`);
-    alert(`El total de su compra con IVA es: $ ${ivaCompra}`); 
-    entrada();
-}
-
-function
- permitido() {
-    alert("Ud es mayor de edad, acceso permitido" );
-    
-    entrada();
-    }
-function noPermitido() {
-    alert("Ud NO es mayor de edad" );
-    alert("!!!INGRESO DENEGADO!!!" );
-    window.location.assign ("https://www.google.com");
-}
-
-let edad = Number(prompt(`Ingrese su edad, debe ser mayor a 17 años`));
-
-if (edad >= 18) {     
-    permitido();
-    
-    }
-    else {
-    noPermitido();
-    }
-
-function entrada() {
-let opcion = Number(prompt(`Ingrese opcion deseada \n 1=Comprar un producto\n 2=Navegar por la web`));    
-    switch (opcion) {
-        case 1:
-            comprar();
-            break;
-    
-        case 2:
-            break;
-    }
-}   
-//Busqueda de productos
 
 document.getElementById("botonBuscar").addEventListener("click", function(){
     let buscarDato = document.getElementById("inputDato").value.toUpperCase();
-    const prod = arrayProductos.find(function(producto){
+    const prod = baseDeDatos.find(function(producto){
         return producto.nombre === buscarDato;
     });
     if (prod){
@@ -395,14 +359,3 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
 
     } 
 })
-
-setTimeout(() => {Swal.fire({
-    title: 'BIENVENIDO!',
-    text: 'MITO - La mejor web sobre bebidas',
-    imageUrl: 'image/bienvenidos.gif',
-    imageWidth: 400,
-    imageHeight: 200,
-    imageAlt: 'Custom image',
-  })
-  }, 500);
-

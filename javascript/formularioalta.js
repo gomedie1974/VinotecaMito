@@ -13,7 +13,6 @@
           console.log(dato.children[0].value);
           console.log(dato.children[1].value);
           console.log(dato.children[2].value);
-          console.log(dato.children[3].value);
         }   
       
 
