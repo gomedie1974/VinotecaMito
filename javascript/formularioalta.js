@@ -4,9 +4,13 @@
   
   function enviarDatos(e) {
       e.preventDefault();
-        Swal.fire({
-            title: '<strong><u>Formulario enviado</u></strong>'
-          })
+      Swal.fire({
+        position: 'top-center ',
+        icon: 'success',
+        title: 'Fomrulario enviado',
+        showConfirmButton: false,
+        timer: 2000
+      })
          // obtener el dato que ingrese  
         let dato = e.target;
         //obtengo el dato de cada uno de los hijos

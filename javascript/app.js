@@ -346,7 +346,8 @@ document.getElementById("botonBuscar").addEventListener("click", function(){
         return producto.nombre === buscarDato;
     });
     if (prod){
-        Swal.fire (`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} \n La cantidad actual en stock es ${prod.cantidad} botellas`);
+        Swal.fire ({
+            text:`El precio del  ${prod.nombre} ${prod.marca} es $ ${prod.precio} y la cantidad actual en stock es ${prod.cantidad} botellas`});
         
     }else{ 
         Swal.fire({
