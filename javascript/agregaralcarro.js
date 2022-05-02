@@ -36,7 +36,7 @@ boton1.addEventListener("click", infoFernetB);
 boton2.addEventListener("click", infoFernetV);
 function infoFernetB() {
     Swal.fire({
-        imageUrl: 'image/branca.jpg',
+        imageUrl: '/image/branca.jpg',
         imageWidth: 400,
         imageHeight: 200,
         imageAlt: 'Custom image',
@@ -54,37 +54,111 @@ function infoFernetV() {
 
 //CARRO DE COMPRAS
 // Variables
-const baseDeDatos = [];
-class Producto {
-    constructor (codigo, nombre, precio, marca, cantidad){
-        this.id = this.id;
-        this.nombre = nombre;
-        this.precio = parseFloat(precio);
-        this.marca = marca;
-        this.cantidad = cantidad;
-        this.disponible = true;
-    }
-    sumarIva(){
-        this.precio = this.precio * 1.21; 
-    }
-    vendido() {
-        this.disponible = false;
-    }
-}
-
-baseDeDatos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));
-baseDeDatos.push(new Producto("FV32", "CYNAR", 490, "BLACK", 24 ));
-baseDeDatos.push(new Producto("AP23", "APEROL", 690, "SPIRITZ", 27 ));
-baseDeDatos.push(new Producto("CP12", "CAMPARI", 490, "ROJO", 39 ));
-baseDeDatos.push(new Producto("F1881", "VODKA", 290, "ORANGE", 143 ));
-baseDeDatos.push(new Producto("F1882", "FERNET", 290, "1882", 143 ));
-baseDeDatos.push(new Producto("FBM,", "BRANCA MENTA", 390, "FERNET", 15 ));
-
-let carrito = [];
-//console.log (baseDeDatos)
-
-for (let i = 0; i < baseDeDatos.length; i++) {
+/* for (let i = 0; i < baseDeDatos.length; i++) {
     let element = baseDeDatos[i];
     carrito.push(element);
     console.log(carrito[i]);    
+} */
+
+const baseDeDatos= [
+    [
+        {
+            id: "FB12",
+            nombre: "FERNET",
+            precio: 990,
+            marca: "BRANCA",
+            cantidad: 94
+        },
+        {
+            id:"FV32",
+            nombre: "CYNAR",
+            precio: 490,
+            marca: "BLACK",
+            cantidad: 24
+        },
+        {
+            id: "AP23",
+            nombre: "APEROL",
+            precio: 690,
+            marca: "SPIRITZ",
+            cantidad: 27
+        },
+        {
+            id: "'CP12'",
+            nombre: "'CAMPARI'",
+            precio: 490,
+            marca: "'ROJO'",
+            cantidad: 39
+        },
+        {
+            id: "'F1881'",
+            nombre: "'VODKA'",
+            precio: 290,
+            marca: "'ORANGE'",
+            cantidad: 143
+        },
+        {
+            id: "'F1882'",
+            nombre: "'PISCO'",
+            precio: 290,
+            marca: "'1882'",
+            cantidad: 143
+        },
+        {
+            id: "'FBM'",
+            nombre: "'BRANCA MENTA'",
+            precio: 390,
+            marca: "'FERNET'",
+            cantidad: 15
+        }
+    ]
+    
+];
+let carrito = []; 
+const clickButon = document.querySelectorAll(".btnCompra");
+const tbody = document.querySelector(`.tbody`);
+
+clickButon.forEach(btn =>{
+    btn.addEventListener("click", addToCarritoItem)
+    //console.log(btn)
+})
+
+function addToCarritoItem(e) {
+    const button = e.target;
+    const item = button.closest(`.card`);
+    const itemTitulo = item.querySelector(`.fw-bolder`).textContent;
+    const itemPrecio = item.querySelector(`.precio`).textContent;
+    const itemImagen = item.querySelector(`.card-img-top`).src;
+    
+    const newItem = {
+        titulo : itemTitulo,
+        precio : itemPrecio,
+        imagen : itemImagen,
+        cantidad : 1 
+    }
+  //console.log(newItem)
+    addItemCarrito(newItem);
+} 
+ 
+function addItemCarrito(newItem) {
+    
+    carrito.push(newItem);
+    console.log(carrito)
+    //cargarCarrito();   
 }
+/* 
+function cargarCarrito() {
+    tbody.innerHTML = " ";
+    carrito.map(item => {
+        const tr = document.createElement(`tr`);
+        tr.classList.add(`ItemCarrito`);
+        const Content = `
+            <td class="tablaNombre"><p>${itemTitulo}</p></td>
+            <td class="tablaPrecio"><p>${itemPrecio}</p></td>
+        `
+        tr.innerHTML = Content;
+        tbody.appendChild(tr);
+    })
+console.log(carrito)
+} */
+  
