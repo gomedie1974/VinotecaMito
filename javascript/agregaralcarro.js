@@ -36,7 +36,7 @@ boton1.addEventListener("click", infoFernetB);
 boton2.addEventListener("click", infoFernetV);
 function infoFernetB() {
     Swal.fire({
-        imageUrl: '/image/branca.jpg',
+        imageUrl: '../image/branca.jpg',
         imageWidth: 400,
         imageHeight: 200,
         imageAlt: 'Custom image',
