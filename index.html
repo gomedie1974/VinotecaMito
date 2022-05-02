@@ -78,8 +78,14 @@
             else {Swal.fire({
                    title: 'ACCESO DENEGADO!',
                    text: 'Ud es MENOR de edad',
-                    })
+                   confirmButtonText: "Ok",
+                   footer: 'Será redireccionado a otra página ', 
+                   showConfirmButton: true,
+                  }).then((result) => {
+                  if (result.isConfirmed) {
                     window.location.assign ("https://www.google.com");
+                  }
+                    })
                 }}
             document.oncontextmenu=new Function("return false");
             </script>
