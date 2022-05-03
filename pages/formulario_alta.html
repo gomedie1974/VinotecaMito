@@ -57,29 +57,32 @@
   </header>
 
   <main class="pt-2 m-5">
-    <form id="form" class="row gx-4 gy-4 align-items-center pt-4">
-        <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" required>   
-        <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required>
-        <input type="text" class="form-control" placeholder="Domicilio" aria-label="Domicilio" required>
-    
-  
-    <div class="row pt-4">
-      <div class="col">
+
+    <form id="form" class="form" action="https://formspree.io/f/myyobvya" method="POST">
+      
+        <input name="name" type="text" class="form-control" placeholder="Nombre"  aria-label="Nombre" required>   <br>
+
+        <input name="name" type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" required> <br>
+
+        <input name="name" class="form-control" placeholder="Domicilio" aria-label="Domicilio" required> <br>
+        
+      <div class="row pt-4">
+       <div class="col">
         <input type="text" class="form-control" placeholder="Localidad" aria-label="Localidad" required>
       </div>
       <div class="col">
         <input type="number" class="form-control" placeholder="CP" aria-label="CP" required>
       </div>
       <div class="col">
-        <input type="date" class="form-control" placeholder="Nacimiento" aria-label="Nacimiento" required>
+        <input type="date" class="form-control" placeholder="Nacimiento" aria-label="Nacimiento" required> <br>
       </div>
     </div>
     
-      <div class="col-sm-5">
+    <div class="row pt-4">
+      <div class="col-sm-3">
         <label class="visually-hidden" for="specificSizeInputName">Name</label>
-        <input type="text" class="form-control" id="specificSizeInputName" placeholder="Usuario" required>
-      </div>
-     <div class="col-sm-3">
+        <input type="text" class="form-control" id="specificSizeInputName" placeholder="Usuario" required>  </div>
+     <div class="col-sm-3"> 
         <label class="visually-hidden" for="specificSizeSelect">Preference</label>
         <select class="form-select" id="specificSizeSelect">
           <option selected>Cambiar...</option>
@@ -91,6 +94,7 @@
           <option value="6">@Gmail.com.ar</option>
         </select>
       </div>
+    </div>
       
     <div class="row pt-4">
       <div class="col">
@@ -113,14 +117,14 @@
           </select>   
       </div>
       </div>
-    
-    <div class="formBaja pt-3">
+    <br>
+    <div class="formBaja pt-3"> 
       <!-- botones -->
       <input type="submit" value="Enviar todo">
       <input type="reset" value="Borrar todo">  
-    </div>    
-  </form>
-    </main>
+    </div>     
+   </form>
+ </main>
     
     <div class="m-3 colores-footer margin-bottom-0" >
       <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
@@ -150,7 +154,7 @@
     <!-- JAVA -->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    <script src="../javascript/formularioalta.js"></script>
+     <script src="../javascript/formularioalta.js"></script> 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
