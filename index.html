@@ -42,7 +42,7 @@
     
 </head>
 
-<body>
+<body class="colorIndex">
     
     <header class="bg-dark text-white">
         <div class="container">
@@ -58,7 +58,7 @@
             <h6>Ingrese su edad</h6>
            <p>Debe ser mayor a 17 años</p> 
         <script>
-            function usrpas(){
+            function edad(){
             if (document.form1.num.value > 17){
                 Swal.fire({
                 title: 'BIENVENIDO!',
@@ -90,8 +90,8 @@
             document.oncontextmenu=new Function("return false");
             </script>
             <form name="form1">
-            <input class="control" type="text" name="num" placeholder="Edad">  
-            <input class="boton" type="button" value="Aceptar" onclick="usrpas()">
+            <input class="control" type="number" name="num" placeholder="">  
+            <input class="boton" type="button" value="Aceptar" onclick="edad()">
             <!-- <p><a href="./pages/formulario_alta.html">Acceda aqui para darse de alta</a></p>
           --></form>
     

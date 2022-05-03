@@ -355,8 +355,8 @@ input[id^="spoiler"]{
 }
 
 .form-login {
-    width: 400px;
-    height: 240px;
+    width: 290px;
+    height: 220px;
     background-color: #77736d;
     margin: auto;
     margin-top: 50px;
@@ -378,20 +378,24 @@ input[id^="spoiler"]{
   
   .control {
     margin-top: 4%;
-    width: 20%;
+    width: 25%;
     height: 40px;
     border: 1px solid #017bab;
     margin-bottom: 15px;
-    margin-left: 10%;
+    margin-left: 20%;
     padding: 11px 10px;
     background: #252323;
     font-size: 14px;
     font-weight: bold;
     color: white;
   }
-  
+  .colorIndex{
+      background-image: url(../image/portada.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
   .boton {
-    width: 50%;
+    width: 30%;
     height: 40px;
     margin-left: 4%;
     background: #017bab;
@@ -399,7 +403,6 @@ input[id^="spoiler"]{
     color: white;
     margin-bottom: 16px;
   }
-  
   .form-login p {  
     height: 50px;
     text-align: center;
