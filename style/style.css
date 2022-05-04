@@ -440,12 +440,14 @@ input[id^="spoiler"]:checked + label + .spoiler {
   color: white;
 }
 
-/* 
-  .colorIndex{
-      background-image: url(../image/inicio.jpg);
-      background-repeat: no-repeat;
-      background-size: 100%;
-  } */
+@media screen and (min-width: 801px) {
+  .colorIndex {
+    background-image: url(../image/inicio.jpg);
+    background-repeat: repeat;
+    background-size: 100%;
+  }
+}
+
 .boton {
   width: 30%;
   height: 40px;

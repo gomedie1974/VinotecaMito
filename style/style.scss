@@ -388,13 +388,15 @@ input[id^="spoiler"]{
     font-size: 14px;
     font-weight: bold;
     color: white;
-  }/* 
-  .colorIndex{
-      background-image: url(../image/inicio.jpg);
-      background-repeat: no-repeat;
-      background-size: 100%;
-  } */
-  .boton {
+  }
+  @media screen and (min-width: 801px){
+    .colorIndex{
+        background-image: url(../image/inicio.jpg);
+        background-repeat: repeat;
+        background-size: 100%;
+    }
+}
+.boton {
     width: 30%;
     height: 40px;
     margin-left: 4%;
