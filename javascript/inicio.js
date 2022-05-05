@@ -323,12 +323,6 @@ class Producto {
         this.cantidad = cantidad;
         this.disponible = true;
     }
-    sumarIva(){
-        this.precio = this.precio * 1.21; 
-    }
-    vendido() {
-        this.disponible = false;
-    }
 }
 
 baseDeDatos.push(new Producto("FB12", "FERNET", 990, "BRANCA", 94 ));

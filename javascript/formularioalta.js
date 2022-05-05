@@ -1,4 +1,4 @@
-  //formulario alta cliente
+  //formulario alta cliente (FORMSPREE)
 const form = document.querySelector('#form')
 form.addEventListener('submit', enviar)
 

@@ -129,7 +129,7 @@ function addToCarritoItem(e) {
     const item = button.closest(`.card`);
     const itemTitulo = item.querySelector(`.fw-bolder`).textContent;
     const itemPrecio = item.querySelector(`.precio`).textContent;
-   const itemImagen = item.querySelector(`.card-img-top`).src;
+    const itemImagen = item.querySelector(`.card-img-top`).src;
     
     const newItem = {
         titulo : itemTitulo,
@@ -137,7 +137,7 @@ function addToCarritoItem(e) {
         imagen : itemImagen,
         cantidad : 1 
     }
-    console.log(newItem)
+    //console.log(newItem)
     addItemCarrito(newItem);
     
 } 
@@ -145,20 +145,6 @@ function addToCarritoItem(e) {
 function addItemCarrito(newItem) {
     
     carrito.push(newItem);
-    console.log(carrito)
-    cargarCarrito();   
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    
 } 
-
-function cargarCarrito() {
-    tbody.innerHTML = " ";
-    carrito.map(item => {
-        const tr = document.createElement(`tr`);
-        tr.classList.add(`ItemCarrito`);
-        const Content = `
-            <td class="tablaNombre"><p>${itemTitulo}</p></td>
-            <td class="tablaPrecio"><p>${itemPrecio}</p></td>
-        `
-        tr.innerHTML = Content;
-        tbody.appendChild(tr);
-    })
-}  
