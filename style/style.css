@@ -449,7 +449,7 @@ input[id^="spoiler"]:checked + label + .spoiler {
 }
 
 .boton {
-  width: 30%;
+  width: 40%;
   height: 40px;
   margin-left: 4%;
   background: #017bab;

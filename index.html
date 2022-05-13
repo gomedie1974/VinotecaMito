@@ -57,48 +57,18 @@
         <section class="form-login">
             <h6>Ingrese su edad</h6>
            <p>Debe ser mayor a 17 años</p> 
-        <script>
-            function edad(){
-            if (document.form1.num.value > 17){
-                Swal.fire({
-                title: 'BIENVENIDO!',
-                text: 'Ud es mayor de edad, acceso permitido',
-                imageUrl: 'image/bienvenidos.gif',
-                imageWidth: 400,
-                imageHeight: 200,
-                imageAlt: 'Custom image',
-                confirmButtonText: "Ingresar", 
-                showConfirmButton: true,
-                  }).then((result) => {
-                  if (result.isConfirmed) {
-                      window.location="pages/inicio.html"
-                  }
-                })
-              }
-            else {Swal.fire({
-                   title: 'ACCESO DENEGADO!',
-                   text: 'Ud es MENOR de edad',
-                   confirmButtonText: "Ok",
-                   footer: 'Será redireccionado a otra página ', 
-                   showConfirmButton: true,
-                  }).then((result) => {
-                  if (result.isConfirmed) {
-                    window.location.assign ("https://www.google.com");
-                  }
-                    })
-                }}
-            document.oncontextmenu=new Function("return false");
-            </script>
-            <form name="form1">
+          <form name="form1">
             <input class="control" type="number" name="num" placeholder="">  
             <input class="boton" type="button" value="Aceptar" onclick="edad()">
-            <!-- <p><a href="./pages/formulario_alta.html">Acceda aqui para darse de alta</a></p>
-          --></form>
-    
+          </form>
+        </section>  
 
     <!-- JAVA -->
     
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src=" "></script>
+
+    <script src="./javascript/index.js"></script>      
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

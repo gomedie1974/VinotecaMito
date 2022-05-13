@@ -29,28 +29,6 @@ function comprar() {
 }
  */
 
-//informacion del fernet
-const boton1 = document.getElementById("infoFernetB");
-const boton2 = document.getElementById("infoFernetV");
-boton1.addEventListener("click", infoFernetB);
-boton2.addEventListener("click", infoFernetV);
-function infoFernetB() {
-    Swal.fire({
-        imageUrl: '../image/branca.jpg',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image',
-        title: `<strong><u>Fernet Branca</u></strong>`,  
-        text: 'Hierbas, frutos, raíces y cortezas de distintas partes del mundo, se combinan dando vida a Fernet Branca. Dispuestas adecuadamente, esperan el instante justo de ser molidas. Se trituran en los molinos, cuidando de no alterar las propiedades de las hierbas esenciales para  una bebida que sólo es igual a sí misma.'
-      })   
-}
-function infoFernetV() {
-    Swal.fire({
-        title: `<strong><u>Fernet Vitone</u></strong>`,  
-        text: 'Hierbas, frutos, raíces y cortezas de distintas partes del mundo, se combinan dando vida a Fernet Branca. Dispuestas adecuadamente, esperan el instante justo de ser molidas. Se trituran en los molinos, cuidando de no alterar las propiedades de las hierbas esenciales para  una bebida que sólo es igual a sí misma.'
-      })   
-}
-
 
 //CARRO DE COMPRAS
 // Variables
@@ -61,7 +39,6 @@ function infoFernetV() {
 } */
 
 const baseDeDatos= [
-    [
         {
             id: "FB12",
             nombre: "FERNET",
@@ -111,8 +88,6 @@ const baseDeDatos= [
             marca: "'FERNET'",
             cantidad: 15
         }
-    ]
-    
 ];
 
 let carrito = []; 
@@ -120,9 +95,21 @@ let carrito = [];
 const clickButon = document.querySelectorAll(".btnCompra");
 const tbody = document.querySelector(`.tbody`);
 
+
 clickButon.forEach(btn =>{
     btn.addEventListener("click", addToCarritoItem)
+    btn.addEventListener("click", mensaje)
 })
+
+function mensaje() {
+    Swal.fire({
+        position: 'top-center',
+        icon: 'success',
+        title: 'Agregado al carrito',
+        showConfirmButton: false,
+        timer: 1500
+      })
+}
 
 function addToCarritoItem(e) {
     const button = e.target;
@@ -130,21 +117,34 @@ function addToCarritoItem(e) {
     const itemTitulo = item.querySelector(`.fw-bolder`).textContent;
     const itemPrecio = item.querySelector(`.precio`).textContent;
     const itemImagen = item.querySelector(`.card-img-top`).src;
+    const itemTotal = itemPrecio;
+    const itemCantidad = 1;
+    //const itemCandidad = prompt("Ingrese la cantidad a comprar:"); 
+    const ncantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad , 0 )
+    //  console.log(ncantidad)
+    const nprecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad*precio , 0 )
+      console.log(nprecio)
+      
     
     const newItem = {
         titulo : itemTitulo,
         precio : itemPrecio,
         imagen : itemImagen,
-        cantidad : 1 
+        total: itemTotal,
+        cantidad : itemCantidad 
     }
+
     //console.log(newItem)
     addItemCarrito(newItem);
     
 } 
 
+const botoB = document.querySelectorAll(".btnCompra");
+
 function addItemCarrito(newItem) {
-    
     carrito.push(newItem);
     localStorage.setItem("carrito", JSON.stringify(carrito));
-    
 } 
+
+  
+
