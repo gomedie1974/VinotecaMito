@@ -90,7 +90,8 @@ const baseDeDatos= [
         }
 ];
 
-let carrito = []; 
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
 
 const clickButon = document.querySelectorAll(".btnCompra");
 const tbody = document.querySelector(`.tbody`);
@@ -118,13 +119,13 @@ function addToCarritoItem(e) {
     const itemPrecio = item.querySelector(`.precio`).textContent;
     const itemImagen = item.querySelector(`.card-img-top`).src;
     const itemTotal = itemPrecio;
-    const itemCantidad = 1;
-    //const itemCandidad = prompt("Ingrese la cantidad a comprar:"); 
-    const ncantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad , 0 )
-    //  console.log(ncantidad)
+
+    const itemCantidad = prompt("Ingrese la cantidad a comprar:");
+
+    /* const ncantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad , 0 )  */
+/* 
     const nprecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad*precio , 0 )
-      console.log(nprecio)
-      
+      console.log(nprecio) */
     
     const newItem = {
         titulo : itemTitulo,
@@ -133,14 +134,11 @@ function addToCarritoItem(e) {
         total: itemTotal,
         cantidad : itemCantidad 
     }
-
     //console.log(newItem)
     addItemCarrito(newItem);
-    
 } 
 
 const botoB = document.querySelectorAll(".btnCompra");
-
 function addItemCarrito(newItem) {
     carrito.push(newItem);
     localStorage.setItem("carrito", JSON.stringify(carrito));

@@ -1,8 +1,14 @@
 let array = JSON.parse(localStorage.getItem("carrito")) || []
-console.log(array);
+//console.log(array);
 
 let tbody = document.querySelector(".tbody");
- 
+/* 
+let totalGral = array.reduce(itemPrecio, itemCantidad =>{
+    itemPrecio*itemCantidad;
+})
+  */
+/* const nprecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad*precio , 0 )
+ */
 array.map(dato => {
     tbody.innerHTML += `
     <tr>
@@ -29,15 +35,15 @@ clickBorro.forEach(btn =>{
 function borrarProd(e) {
     e.target.parentElement.parentElement.remove();
     elemento = e.target.parentElement.parentElement;
+    localStorage.clear();
 }
+
 
 //VACIAR TODO EL CARRO
 const vaciarCarro = document.getElementById("vaciar-carrito");
 vaciarCarro.addEventListener("click", () => {
     array.length = 0;
-    console.log(array);
     tbody.remove();     
+    localStorage.clear();
 });
- 
-
  
