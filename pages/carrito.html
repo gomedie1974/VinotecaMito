@@ -46,38 +46,42 @@
 
     </tbody>
     
-    <tfoot>
-      <tr id="footer">
-        <!-- <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th> -->
-      </tr>
+    <tfoot >
+      <tr id="footer"> 
+        
+      </tr> 
     </tfoot>
- 
   </table>
   
+  <tr scope="row" colspan="2">
+     <th> 
+      <h5> Total Productos </h5>
+     </th>
+  </tr>  
+
   <br><br>
 
+  <div id="template-footer">
+    <!--  <th scope="row" colspan="2">Total productos</th>
+     <td> </td> -->
+      <td>
+         <button class="btn btn-danger btn-sm" id="vaciar-carrito">
+             vaciar todo
+         </button>
+     </td>
+ <!--     <td class="font-weight-bold">$ <span>5000</span></td> -->
+ </div>
+ 
+
+
   <div class="row mx-4">
-  <!--   <div class="col">
-      <h3 class="itemCartTotal text-white">Total: 0 </h3>
-    </div>
-   -->  <div class="col d-flex justify-content-end">
+    <div class="col d-flex justify-content-end">
       <button class="btn btn-success">COMPRAR</button>
     </div>
   </div>
+  
 
-
-<div id="template-footer">
-<!--     <th scope="row" colspan="2">Total productos</th>
-    <td> </td>
- -->    <td>
-        <button class="btn btn-danger btn-sm" id="vaciar-carrito">
-            vaciar todo
-        </button>
-    </td>
-<!--     <td class="font-weight-bold">$ <span>5000</span></td> -->
-</div>
-
-
+<!-- 
 <template id="template-card">
   <div class="col-12 mb-2">
     <div class="card">
@@ -90,7 +94,7 @@
   </div>
 </template>
 
-  
+ -->  
       <!-- JAVA -->
   
      <script src="../javascript/carrito.js"></script>

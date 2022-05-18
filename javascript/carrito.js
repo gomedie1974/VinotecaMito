@@ -2,13 +2,6 @@ let array = JSON.parse(localStorage.getItem("carrito")) || []
 //console.log(array);
 
 let tbody = document.querySelector(".tbody");
-/* 
-let totalGral = array.reduce(itemPrecio, itemCantidad =>{
-    itemPrecio*itemCantidad;
-})
-  */
-/* const nprecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad*precio , 0 )
- */
 array.map(dato => {
     tbody.innerHTML += `
     <tr>
@@ -23,7 +16,7 @@ array.map(dato => {
         <th> ${dato.total}</th> 
         <th>
             <button href="#" class="borrarProducto fas fa-times-circle bg-danger text-white">X </button>   
-        </th>        
+        </th>
     </tr> `   
 })
 
@@ -32,18 +25,28 @@ const clickBorro = document.querySelectorAll(".borrarProducto");
 clickBorro.forEach(btn =>{
     btn.addEventListener("click", borrarProd)
 })
+
 function borrarProd(e) {
     e.target.parentElement.parentElement.remove();
     elemento = e.target.parentElement.parentElement;
-    localStorage.clear();
+    localStorage.removeItem();
+    //no esta removiendo el item del local
 }
 
 
 //VACIAR TODO EL CARRO
 const vaciarCarro = document.getElementById("vaciar-carrito");
+
 vaciarCarro.addEventListener("click", () => {
     array.length = 0;
     tbody.remove();     
-    localStorage.clear();
+    localStorage.clear(); 
+    footer.innerHTML += `
+    <th scope="row" colspan="5">
+    <h4> Carrito vacío - comience a comprar!</h4>
+    </th> 
+    `
 });
- 
+
+
+
