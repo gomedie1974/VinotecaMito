@@ -3,3 +3,6 @@ En el html Inicio se puede usar el input para buscar cantidades y valores de los
 En el html Inicio se puede usar Whatsapp a traves de su API 
 Alta de cliente use la API Formspree.
 
+FALLAS
+NO funciona el total por producto 
+NO supe como sumar todos los productos total general

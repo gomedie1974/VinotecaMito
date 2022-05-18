@@ -108,7 +108,7 @@ function mensaje() {
         title: 'Agregado al carrito',
         showConfirmButton: false,
         timer: 1500
-      })
+          })
 }
 
 function addToCarritoItem(e) {
@@ -117,12 +117,15 @@ function addToCarritoItem(e) {
     const itemTitulo = item.querySelector(`.fw-bolder`).textContent;
     const itemPrecio = item.querySelector(`.precio`).textContent;
     const itemImagen = item.querySelector(`.card-img-top`).src;
-    const nCantidad = 1;
+    const nCantidad = 2;
     //const itemCantidad = prompt("Ingrese la cantidad a comprar:");
-         
+    //const itemTotal = itemPrecio * nCantidad;     
     
     const itemTotal = itemPrecio;
-
+ 
+  /*   const nTotal = Object.values(carrito).reduce((acc, {nCantidad, itemPrecio}) => acc + nCantidad * itemPrecio, 0);
+    console.log(nTotal);
+  */
     const newItem = {
         imagen : itemImagen,
         titulo : itemTitulo,
